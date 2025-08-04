@@ -1,6 +1,6 @@
 collections:
   - name: vmware.vmware
   - name: amazon.aws
-  - name: comunity.vmware
+  - name: community.vmware
   - name: community.general
   - name: theforeman.foreman
