@@ -5,3 +5,4 @@ collections:
   - name: community.general
   - name: community.windows
   - name: theforeman.foreman
+  - name: chocolatey.chocolatey
