@@ -4,3 +4,4 @@ vmware-vapi-common-client
 aiohttp
 passlib
 requests
+pywinrm
