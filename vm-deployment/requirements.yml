@@ -6,3 +6,6 @@ collections:
   - name: community.windows
   - name: theforeman.foreman
   - name: chocolatey.chocolatey
+  - name: ansible.posix
+  - name: community.general
+  - name: microsoft.ad
