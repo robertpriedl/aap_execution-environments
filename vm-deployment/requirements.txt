@@ -5,3 +5,5 @@ aiohttp
 passlib
 requests
 pywinrm
+boto3
+botocore
