@@ -1,0 +1,12 @@
+collections:
+  - name: vmware.vmware
+  - name: amazon.aws
+  - name: community.aws
+  - name: community.vmware
+  - name: community.general
+  - name: community.windows
+  - name: theforeman.foreman
+  - name: chocolatey.chocolatey
+  - name: ansible.posix
+  - name: community.general
+  - name: microsoft.ad
