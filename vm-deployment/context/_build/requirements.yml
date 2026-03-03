@@ -10,3 +10,5 @@ collections:
   - name: ansible.posix
   - name: community.general
   - name: microsoft.ad
+  - name: infra.controller_configuration
+  - name: cyberark.pas

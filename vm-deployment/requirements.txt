@@ -7,3 +7,4 @@ requests
 pywinrm
 boto3
 botocore
+ansible-lint
