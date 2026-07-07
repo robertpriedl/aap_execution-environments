@@ -8,4 +8,4 @@ pywinrm
 boto3
 botocore
 ansible-lint
-ldap3
+python-ldap
