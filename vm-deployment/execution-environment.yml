@@ -12,4 +12,6 @@ dependencies:
 options:
   package_manager_path: /usr/bin/microdnf
 
-
+additional_build_steps:
+  prepend_final:
+    - RUN microdnf update -y && microdnf clean all

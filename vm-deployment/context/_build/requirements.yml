@@ -11,4 +11,5 @@ collections:
   - name: community.general
   - name: microsoft.ad
   - name: infra.controller_configuration
+  - name: infra.ah_configuration
   - name: cyberark.pas
