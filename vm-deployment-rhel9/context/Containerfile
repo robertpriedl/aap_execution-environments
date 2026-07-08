@@ -3,7 +3,7 @@ ARG PYCMD="/usr/bin/python3"
 ARG PKGMGR_PRESERVE_CACHE=""
 ARG ANSIBLE_GALAXY_CLI_COLLECTION_OPTS=""
 ARG ANSIBLE_GALAXY_CLI_ROLE_OPTS=""
-ARG PKGMGR="/usr/bin/dnf"
+ARG PKGMGR="/usr/bin/microdnf"
 
 # Base build stage
 FROM $EE_BASE_IMAGE AS base
@@ -67,7 +67,7 @@ ARG ANSIBLE_GALAXY_CLI_COLLECTION_OPTS
 ARG ANSIBLE_GALAXY_CLI_ROLE_OPTS
 ARG PKGMGR
 
-RUN dnf update -y && dnf clean all
+RUN microdnf update -y && microdnf clean all
 RUN /output/scripts/check_ansible $PYCMD
 
 COPY --from=galaxy /usr/share/ansible /usr/share/ansible

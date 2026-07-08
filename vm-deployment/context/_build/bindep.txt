@@ -1,6 +1,6 @@
 python3-pip
 gcc
-python3-devel
+python3.12-devel
 git
 openldap-devel
 cyrus-sasl-devel

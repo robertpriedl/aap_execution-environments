@@ -1,7 +1,27 @@
-ansible-builder build -t quay.io/robert_priedl/ee-vm-deploy-rhel9:latest --verbosity 3
+#!/usr/bin/env bash
+set -euo pipefail
+trap 'echo "Error: build_ee.sh failed at line $LINENO (exit code $?)" >&2' ERR
+
+export CONTAINERS_STORAGE_CONF="$(cd "$(dirname "$0")" && pwd)/build-storage.conf"
+
+IMAGE="quay.io/robert_priedl/ee-vm-deploy-rhel9:latest"
+
+if [ -z "${QUAY_PASSWORD:-}" ]; then
+    echo "Error: QUAY_PASSWORD environment variable is not set" >&2
+    exit 1
+fi
+
+echo "==> Building ${IMAGE}"
+ansible-builder build -t "${IMAGE}" --verbosity 3
+
+echo "==> Logging in to quay.io"
 podman login quay.io --username robert_priedl+builder --password "$QUAY_PASSWORD"
-podman push quay.io/robert_priedl/ee-vm-deploy-rhel9:latest
-#podman login -u='robert_priedl+builder' -p='NGIPDHPCLXY9BBXEG79H1L5ARAOV9VEXBAE6ZB7UGZUZPKZ55Z3FNOYT2KU9S7VI' quay.io
+
+echo "==> Pushing ${IMAGE}"
+podman push "${IMAGE}"
+
+echo "==> Done: ${IMAGE} built and pushed successfully"
+
 # under AAP go to Execution Environments and create a new one
 # use the quay.io/robert_priedl/ee-vm-deploy-rhel9:latest
 # set the name to ee-vm-deploy-rhel9
