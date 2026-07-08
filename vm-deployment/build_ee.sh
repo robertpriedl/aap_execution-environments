@@ -4,7 +4,7 @@ trap 'echo "Error: build_ee.sh failed at line $LINENO (exit code $?)" >&2' ERR
 
 export CONTAINERS_STORAGE_CONF="$(cd "$(dirname "$0")" && pwd)/build-storage.conf"
 
-IMAGE="quay.io/robert_priedl/ee-vm-deploy:latest"
+IMAGE="quay.io/robert_priedl/ee-vm-deploy-rhel8:latest"
 
 if [ -z "${QUAY_PASSWORD:-}" ]; then
     echo "Error: QUAY_PASSWORD environment variable is not set" >&2
@@ -23,6 +23,6 @@ podman push "${IMAGE}"
 echo "==> Done: ${IMAGE} built and pushed successfully"
 
 # under AAP go to Execution Environments and create a new one
-# use the quay.io/robert_priedl/ee-vm-deploy:latest
-# set the name to ee-vm-deploy
-# set the Upstream name to robert_priedl/ee-vm-deploy
+# use the quay.io/robert_priedl/ee-vm-deploy-rhel8:latest
+# set the name to ee-vm-deploy-rhel8
+# set the Upstream name to robert_priedl/ee-vm-deploy-rhel8
